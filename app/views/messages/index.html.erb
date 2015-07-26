@@ -1,14 +1,24 @@
 <div class="panel panel-default">
     <div class="panel-heading">メッセージ一覧</div>
     <div class="panel-body">
+        <ul class="list-group">
         <% @messages.each do |message| %>
-            <span class="label label-info"><%= message.name %></span>
-            <%= message.body %>
+            <li class="list-group-item">
+                <span class="label label-info"><%= message.name %></span>
+                <%= simple_format(h(message.body)) %>
+            </li>
         <% end %>
+        </ul>
     </div>
 </div>
 <%= form_for(Message.new) do |f| %>
-    名前:<%= f.text_field :name %>
-    内容:<%= f.text_field :body %>
-    <%= f.submit class: "btn btn-sm btn-primary" %>
+    <div class="form-group">
+        <%= f.label :name, '名前' %>
+        <%= f.text_field :name, class:"form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :body, '内容' %>
+        <%= f.text_area :body, class:"form-control" %>
+    </div>
+    <%= f.submit "メッセージを作成" , class: "btn btn-sm btn-primary" %>
 <% end %>
