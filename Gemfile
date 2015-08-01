@@ -43,7 +43,8 @@ group :development, :test do
   gem 'spring'
   
   gem 'test-unit'
-  gem 'rspec-rails', '2.13.1'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
   
   gem 'sqlite3'
 end
