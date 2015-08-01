@@ -47,5 +47,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   
   gem 'sqlite3'
+  
+  gem 'coveralls', :require => false
 end
 
