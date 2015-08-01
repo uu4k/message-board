@@ -77,7 +77,7 @@ describe Message do
             end
             it "type error:float" do
                 message.age = 1.1
-                expect(message.save).to eq true
+                expect(message.save).to eq false
             end
         end
     end
